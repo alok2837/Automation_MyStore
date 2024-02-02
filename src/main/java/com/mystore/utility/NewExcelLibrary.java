@@ -63,6 +63,7 @@ public class NewExcelLibrary {
 			
 		}
 		
+		@SuppressWarnings("deprecation")
 		public String getCellData(String sheetName,String colName,int rowNum){
 			try{
 				if(rowNum <=0)
