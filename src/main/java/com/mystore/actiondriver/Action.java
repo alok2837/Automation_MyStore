@@ -443,6 +443,7 @@ public class Action extends BaseClass implements ActionInterface {
 
 	@Override
 	public boolean mouseover(WebDriver driver, WebElement ele) {
+		@SuppressWarnings("unused")
 		boolean flag = false;
 		try {
 			new Actions(driver).moveToElement(ele).build().perform();

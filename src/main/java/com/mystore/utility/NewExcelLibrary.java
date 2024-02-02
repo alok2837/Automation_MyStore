@@ -10,9 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+@SuppressWarnings("deprecation")
 public class NewExcelLibrary {
 
-	public static String path = System.getProperty("user.dir") + "\\src\\test\\resources\\TestData\\TestData.xlsx";
+	public String path = System.getProperty("user.dir") + "\\src\\test\\resources\\TestData\\TestData.xlsx";
 
 //	public  String path;
 	public FileInputStream fis = null;
@@ -24,14 +25,13 @@ public class NewExcelLibrary {
 
 	public NewExcelLibrary() {
 
-		this.path=path;
+		// this.path=path;
 		try {
 			fis = new FileInputStream(path);
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(0);
 			fis.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -45,7 +45,6 @@ public class NewExcelLibrary {
 			sheet = workbook.getSheetAt(0);
 			fis.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -63,7 +62,6 @@ public class NewExcelLibrary {
 			
 		}
 		
-		@SuppressWarnings("deprecation")
 		public String getCellData(String sheetName,String colName,int rowNum){
 			try{
 				if(rowNum <=0)
